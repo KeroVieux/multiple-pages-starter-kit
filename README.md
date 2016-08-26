@@ -11,3 +11,4 @@ It's a starter for multiple pages with handlebars in complete components
 - sass
 - webpack
 - bootstrap
+- jsdoc

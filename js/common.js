@@ -13,6 +13,11 @@ extraData = {
 
 $body.append(extraData.ieNotice);
 
+
+/**
+  @namespace
+ */
+
 commonFn = {
   stopBubble: function(e) {
     if (e && e.stopPropagation) {
@@ -52,13 +57,22 @@ commonFn = {
     }
     return p;
   },
+
+  /**
+    Function for rendered the components
+    @param {object} arg The arguments for render
+    @example
+    hbsRender({
+     selector:'#bar',
+     hbs:'bar',
+     dataJSON:{title:'barTitle'},
+     callback:function(){ console.log('there was a bar hbs has rendered')}
+    })
+   */
   hbsRender: function(arg) {
     var callbackRes, dataRes, extRes;
     extRes = '.hbs';
     dataRes = {};
-    callbackRes = function() {
-      return console.log(arg.hbs + " 渲染完成");
-    };
     if (arg.ext) {
       extRes = arg.ext;
     }
@@ -68,44 +82,25 @@ commonFn = {
     if (arg.callback) {
       callbackRes = arg.callback;
     }
-    if ($(arg.selector).size() > 0) {
-      return $(arg.selector).loadFromTemplate({
-        template: arg.hbs,
-        data: dataRes,
-        callback: callbackRes,
-        extension: extRes
-      });
-    } else {
-      return console.log('没有所选的dom');
-    }
-  },
-  hbsRender1: function(selector, hbs, dataJSON, callback, ext) {
-    var callbackRes, dataRes, extRes;
-    extRes = '.hbs';
-    dataRes = {};
-    callbackRes = function() {
-      return console.log(hbs + " 渲染完成");
-    };
-    if (ext) {
-      extRes = ext;
-    }
-    if (dataJSON) {
-      dataRes = dataJSON;
-    }
-    if (callback) {
-      callbackRes = callback;
-    }
-    return $(selector).loadFromTemplate({
-      template: hbs,
+    return $(arg.selector).loadFromTemplate({
+      template: arg.hbs,
       data: dataRes,
       callback: callbackRes,
       extension: extRes
     });
   },
-  fillToForm: function(formName, data) {
+
+  /**
+  Function for specified json to fill into a form
+  @param {string} formName The Class name of the target(form)
+  @param {object} data It's would be a json
+  @example
+  fillToForm('formClass',json)
+   */
+  fillToForm: function(formClass, data) {
     var $inputs;
-    if ($("" + formName).size() < 1 && _.isObject(data)) {
-      $inputs = $("." + formName + " input");
+    if ($("" + formClass).size() < 1 && _.isObject(data)) {
+      $inputs = $("." + formClass + " input");
       return $.each(data, function(key, value) {
         return $inputs.filter(function() {
           return key === this.id;
@@ -116,5 +111,7 @@ commonFn = {
     }
   }
 };
+
+$body.find('.overlay').fadeOut();
 
 //# sourceMappingURL=common.js.map

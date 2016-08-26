@@ -5,7 +5,7 @@ a{
   }
 }
 .bdb_gd{
-  border-bottom: rem(1) solid #E9E9E9;
+  border-bottom: 1px solid #E9E9E9;
 }
 .text-middle{
   display: -webkit-box;
@@ -26,9 +26,8 @@ a{
   position: fixed;
   width: 100%;
   height: 100%;
-  background: white(.5);
-  display: none;
-  .spiner{
+  background: white(.98);
+  .spinner{
     position: fixed;
     z-index: 999;
     width: 100%;

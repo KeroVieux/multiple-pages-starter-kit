@@ -1,10 +1,23 @@
 $ ->
   commonFn.hbsRender({
-    selector:'#bar'
-    hbs:'bar'
-    dataJSON:{title:'abc1'}
-    callback: ->
-      console.log('ccc1')
+    selector:'#navBar'
+    hbs:'nav_bar'
+  })
+  commonFn.hbsRender({
+    selector:'#carousel'
+    hbs:'carousel'
+  })
+  commonFn.hbsRender({
+    selector:'#imgList'
+    hbs:'img_list'
+  })
+  commonFn.hbsRender({
+    selector:'#productsList'
+    hbs:'products_list'
+  })
+  commonFn.hbsRender({
+    selector:'#pageFooter'
+    hbs:'page_footer'
   })
   $('.btn-test').click ->
     $('#modal').modal('show');

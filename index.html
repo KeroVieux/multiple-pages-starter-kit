@@ -13,33 +13,24 @@
   <link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
-
-  <div class="modal fade" id="modal">
-  	<div class="modal-dialog">
-  		<div class="modal-content">
-  			<div class="modal-header">
-  				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  				<h4 class="modal-title">Modal title</h4>
-  			</div>
-  			<div class="modal-body">
-  				Modal body ...
-  			</div>
-  			<div class="modal-footer">
-  				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  				<button type="button" class="btn btn-primary">Save changes</button>
-  			</div>
-  		</div><!-- /.modal-content -->
-  	</div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+  <div class="overlay"><div class="spinner"><i class="fa fa-spin fa-spinner"></i></div></div>
+  <div id="navBar"></div>
+  <div id="carousel"></div>
+  <div class="m-b-15"></div>
   <div class="container">
-    <div class="col-xs-6">
-      <a class="btn btn-primary" data-toggle="modal" href="#modal">Trigger modal</a>
-    </div>
-    <div class="col-xs-6">
-      <button class="btn btn-primary btn-test">test</button>
-      <div id="bar"></div>
+    <div id="imgList"></div>
+    <ul class="nav nav-tabs m-b-10">
+      <li role="presentation" class="active"><a href="#">Hot</a></li>
+      <li role="presentation"><a href="#">News</a></li>
+      <li role="presentation"><a href="#">Products</a></li>
+    </ul>
+    <div class="row">
+      <div id="productsList"></div>
     </div>
   </div>
+  <div class="p-b-30"></div>
+  <div class="bdb_gd"></div>
+  <div id="pageFooter"></div>
   <script src='js/main.bundle.js'></script>
   <script src='js/index.js'></script>
 </body>
